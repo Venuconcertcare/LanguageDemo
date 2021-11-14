@@ -20,7 +20,7 @@ const Container = (props) => {
 Container.defaultProps = {
   barStyle: 'light-content',
   topColor: Constants.COLOR.THEME_COLOR,
-  backgroundColor: Constants.COLOR.WHITE_COLOR,
+  backgroundColor: Constants.COLOR.PRIMARY_COLOR,
   bottomColor: Constants.COLOR.WHITE_COLOR,
 };
 

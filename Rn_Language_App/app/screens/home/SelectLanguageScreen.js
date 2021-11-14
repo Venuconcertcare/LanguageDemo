@@ -26,7 +26,7 @@ const deviceHeight = Utility.isiPhoneX()
   : Dimensions.get('window').height;
 const deviceWidth = Dimensions.get('window').width;
 
-class LoginScreen extends Component {
+class SelectLanguageScreen extends Component {
   static propTypes = {
     //   isLoginPageLoading: PropTypes.bool,
     //   loginManualUserDetails: PropTypes.func,
@@ -60,7 +60,7 @@ class LoginScreen extends Component {
                 paddingVertical: 12,
                 fontFamily: 'SofiaPro-Bold',
                 textAlign: 'center',
-                marginTop: 10,
+                marginTop: 30,
               }}>
               Login Now
             </Text>
@@ -179,9 +179,6 @@ class LoginScreen extends Component {
               height: 50,
               marginHorizontal: 20,
               marginTop: 10,
-            }}
-            onPress={() => {
-            Actions.selectlanguageScreen()
             }}>
             <Text
               style={{
@@ -190,13 +187,16 @@ class LoginScreen extends Component {
                 paddingVertical: 12,
                 fontFamily: 'SofiaPro-Bold',
                 textAlign: 'center',
+                
               }}>
               Login
             </Text>
           </TouchableOpacity>
 
           <TouchableOpacity
-            onPress={() => {}}
+            onPress={() => {
+             
+            }}
             style={{
               marginVertical: 10,
               alignSelf: 'center',
@@ -211,7 +211,7 @@ class LoginScreen extends Component {
                 marginTop: 20,
               }}>
               {' '}
-              Don't have anaccount!
+             Don't have anaccount!
             </Text>
 
             <View
@@ -229,6 +229,7 @@ class LoginScreen extends Component {
                 {' '}
                 Register
               </Text>
+              
             </View>
           </TouchableOpacity>
           {/* </KeyboardAwareScrollView> */}
@@ -270,4 +271,4 @@ const mapDispatchToProps = dispatch => {
   );
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoginScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(SelectLanguageScreen);

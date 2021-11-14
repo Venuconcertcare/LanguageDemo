@@ -13,6 +13,7 @@ import {View, Linking} from 'react-native';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import LoginScreen from '../screens/login/LoginScreen';
+import SelectLanguageScreen from '../screens/home/SelectLanguageScreen';
 
 class Main extends Component {
     constructor(props) {
@@ -28,6 +29,7 @@ class Main extends Component {
         return(
             <View  style={{flex: 1, backgroundColor: 'red'}}>
               <Scene key={'login'} component={LoginScreen} type={ActionConst.RESET} />
+              <Scene key={'selectlanguageScreen'} component={SelectLanguageScreen} />
             </View>
         )
            

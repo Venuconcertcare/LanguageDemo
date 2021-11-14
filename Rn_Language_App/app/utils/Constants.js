@@ -18,7 +18,11 @@
    COLOR: {
      THEME_COLOR: '#12183F',
      THEME_SECONDARY: '#7D90C9',
-     WHITE_COLOR:'#ffffff'
+     WHITE_COLOR:'#ffffff',
+     PRIMARY_COLOR:'#FEFEFE',
+     LABLE_COLOR:'#1C1C1C',
+     TEXT_BOX_COLOR:'#F1F1F1',
+     LOGIN_BTN_COLOR:'#EC173D'
      
    },
  
@@ -65,6 +69,9 @@
    VALIDATION_MSG: {
     
    },
+   SCREEN_SIZE: {
+    PLUS_SIZE: 777,
+  },
    HTTP_CODE: {
      SUCCESS: 200,
      INSERT_SUCESS: 201,
