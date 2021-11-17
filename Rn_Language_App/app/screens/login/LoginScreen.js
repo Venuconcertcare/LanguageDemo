@@ -100,15 +100,10 @@ class LoginScreen extends Component {
                 'Password@123',
               );
             }}>
-            <Text
-              style={styles.loginButtonText}>
-              Login
-            </Text>
+            <Text style={styles.loginButtonText}>Login</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity
-            onPress={() => {}}
-            style={styles.registerView}>
+          <TouchableOpacity onPress={() => {}} style={styles.registerView}>
             <Text
               style={{
                 color: Constants.COLOR.LABLE_COLOR,
@@ -240,9 +235,9 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     textAlign: 'center',
   },
-  registerView:{
+  registerView: {
     marginVertical: 10,
     alignSelf: 'center',
     flexDirection: 'row',
-  }
+  },
 });
