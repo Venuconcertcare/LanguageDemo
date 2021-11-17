@@ -35,35 +35,15 @@ class LoginScreen extends Component {
   render() {
     return (
       <Container bottomColor={Constants.COLOR.PRIMARY_COLOR}>
-        <View
-          style={{
-            flex: 1,
-            height: 50,
-            backgroundColor: Constants.COLOR.PRIMARY_COLOR,
-          }}>
+        <View style={styles.container}>
           {/* <KeyboardAwareScrollView showsVerticalScrollIndicator={false}> */}
           <Image
             resizeMode={'contain'}
             source={require('../../assets/image/logo.png')}
-            style={{
-              height: deviceWidth / 3,
-              width: deviceWidth / 2,
-              marginTop: deviceHeight / 9,
-              alignSelf: 'center',
-            }}
+            style={styles.loginLog}
           />
-          <View style={{marginHorizontal: 20, marginTop: 40}}>
-            <Text
-              style={{
-                fontSize: Constants.FONT_SIZE.ANALYTICS,
-                color: Constants.COLOR.LABLE_COLOR,
-                paddingVertical: 12,
-           
-                textAlign: 'center',
-                marginTop: 10,
-              }}>
-              Login Now
-            </Text>
+          <View style={styles.tilteView}>
+            <Text style={styles.loginLable}>Login Now</Text>
           </View>
           <View style={{marginHorizontal: 20}}>
             <Text
@@ -71,7 +51,7 @@ class LoginScreen extends Component {
                 fontSize: Constants.FONT_SIZE.S,
                 color: Constants.COLOR.LABLE_COLOR,
                 paddingVertical: 12,
-           
+
                 textAlign: 'center',
               }}>
               Please enter the details below to continue
@@ -93,7 +73,7 @@ class LoginScreen extends Component {
             <TextInput
               style={{
                 flex: 1,
-          
+
                 color: Constants.COLOR.LABLE_COLOR,
                 fontSize: Constants.FONT_SIZE.M,
                 alignItems: 'center',
@@ -131,7 +111,7 @@ class LoginScreen extends Component {
             <TextInput
               style={{
                 flex: 1,
-             
+
                 color: Constants.COLOR.LABLE_COLOR,
                 fontSize: Constants.FONT_SIZE.M,
                 alignItems: 'center',
@@ -159,7 +139,7 @@ class LoginScreen extends Component {
               style={{
                 color: Constants.COLOR.LOGIN_BTN_COLOR,
                 fontSize: Constants.FONT_SIZE.L,
-               
+
                 textAlign: 'right',
                 marginTop: 10,
                 marginHorizontal: 20,
@@ -181,14 +161,14 @@ class LoginScreen extends Component {
               marginTop: 10,
             }}
             onPress={() => {
-            Actions.selectlanguageScreen()
+              Actions.selectlanguageScreen();
             }}>
             <Text
               style={{
                 fontSize: Constants.FONT_SIZE.L,
                 color: Constants.COLOR.PRIMARY_COLOR,
                 paddingVertical: 12,
-       
+
                 textAlign: 'center',
               }}>
               Login
@@ -206,7 +186,6 @@ class LoginScreen extends Component {
               style={{
                 color: Constants.COLOR.LABLE_COLOR,
                 fontSize: Constants.FONT_SIZE.M,
-           
 
                 marginTop: 20,
               }}>
@@ -222,7 +201,6 @@ class LoginScreen extends Component {
                 style={{
                   color: Constants.COLOR.LOGIN_BTN_COLOR,
                   fontSize: Constants.FONT_SIZE.M,
-              
 
                   marginTop: 20,
                 }}>
@@ -271,3 +249,29 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoginScreen);
+// define your styles
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    height: 50,
+    backgroundColor: Constants.COLOR.PRIMARY_COLOR,
+  },
+  loginLog: {
+    height: deviceWidth / 3,
+    width: deviceWidth / 2,
+    marginTop: deviceHeight / 9,
+    alignSelf: 'center',
+  },
+  tilteView: {
+    marginHorizontal: 20,
+    marginTop: 40,
+  },
+  loginLable: {
+    fontSize: Constants.FONT_SIZE.ANALYTICS,
+    color: Constants.COLOR.LABLE_COLOR,
+    paddingVertical: 12,
+
+    textAlign: 'center',
+    marginTop: 10,
+  },
+});
