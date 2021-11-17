@@ -211,7 +211,7 @@ class LoginScreen extends Component {
                 marginTop: 20,
               }}>
               {' '}
-              Don't have anaccount!
+              Don't have an account!
             </Text>
 
             <View

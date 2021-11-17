@@ -8,9 +8,7 @@ import {
   Dimensions,
   TextInput,
   Platform,
-  ActivityIndicator,
   TouchableOpacity,
-  ImageBackground,
 } from 'react-native';
 // import PropTypes from 'prop-types';
 import {bindActionCreators} from 'redux';
@@ -58,7 +56,6 @@ class SelectLanguageScreen extends Component {
                 fontSize: Constants.FONT_SIZE.ANALYTICS,
                 color: Constants.COLOR.LABLE_COLOR,
                 paddingVertical: 12,
-                fontFamily: 'SofiaPro-Bold',
                 textAlign: 'center',
                 marginTop: 30,
               }}>
@@ -71,7 +68,6 @@ class SelectLanguageScreen extends Component {
                 fontSize: Constants.FONT_SIZE.S,
                 color: Constants.COLOR.LABLE_COLOR,
                 paddingVertical: 12,
-                fontFamily: 'SofiaPro-Bold',
                 textAlign: 'center',
               }}>
               Please enter the details below to continue
@@ -131,7 +127,6 @@ class SelectLanguageScreen extends Component {
             <TextInput
               style={{
                 flex: 1,
-                fontFamily: 'SofiaPro-Regular',
                 color: Constants.COLOR.LABLE_COLOR,
                 fontSize: Constants.FONT_SIZE.M,
                 alignItems: 'center',
@@ -159,7 +154,6 @@ class SelectLanguageScreen extends Component {
               style={{
                 color: Constants.COLOR.LOGIN_BTN_COLOR,
                 fontSize: Constants.FONT_SIZE.L,
-                fontFamily: 'SofiaPro-Bold',
                 textAlign: 'right',
                 marginTop: 10,
                 marginHorizontal: 20,
@@ -185,7 +179,6 @@ class SelectLanguageScreen extends Component {
                 fontSize: Constants.FONT_SIZE.L,
                 color: Constants.COLOR.PRIMARY_COLOR,
                 paddingVertical: 12,
-                fontFamily: 'SofiaPro-Bold',
                 textAlign: 'center',
                 
               }}>
@@ -206,8 +199,6 @@ class SelectLanguageScreen extends Component {
               style={{
                 color: Constants.COLOR.LABLE_COLOR,
                 fontSize: Constants.FONT_SIZE.M,
-                fontFamily: 'SofiaPro-Light',
-
                 marginTop: 20,
               }}>
               {' '}
@@ -222,8 +213,6 @@ class SelectLanguageScreen extends Component {
                 style={{
                   color: Constants.COLOR.LOGIN_BTN_COLOR,
                   fontSize: Constants.FONT_SIZE.M,
-                  fontFamily: 'SofiaPro-Bold',
-
                   marginTop: 20,
                 }}>
                 {' '}
@@ -272,3 +261,11 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SelectLanguageScreen);
+// define your styles
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: Constants.COLOR.THEME_COLOR,
+  },
+
+})
