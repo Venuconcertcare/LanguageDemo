@@ -58,7 +58,7 @@ class LoginScreen extends Component {
                 fontSize: Constants.FONT_SIZE.ANALYTICS,
                 color: Constants.COLOR.LABLE_COLOR,
                 paddingVertical: 12,
-                fontFamily: 'SofiaPro-Bold',
+           
                 textAlign: 'center',
                 marginTop: 10,
               }}>
@@ -71,7 +71,7 @@ class LoginScreen extends Component {
                 fontSize: Constants.FONT_SIZE.S,
                 color: Constants.COLOR.LABLE_COLOR,
                 paddingVertical: 12,
-                fontFamily: 'SofiaPro-Bold',
+           
                 textAlign: 'center',
               }}>
               Please enter the details below to continue
@@ -93,7 +93,7 @@ class LoginScreen extends Component {
             <TextInput
               style={{
                 flex: 1,
-                fontFamily: 'SofiaPro-Regular',
+          
                 color: Constants.COLOR.LABLE_COLOR,
                 fontSize: Constants.FONT_SIZE.M,
                 alignItems: 'center',
@@ -131,7 +131,7 @@ class LoginScreen extends Component {
             <TextInput
               style={{
                 flex: 1,
-                fontFamily: 'SofiaPro-Regular',
+             
                 color: Constants.COLOR.LABLE_COLOR,
                 fontSize: Constants.FONT_SIZE.M,
                 alignItems: 'center',
@@ -159,7 +159,7 @@ class LoginScreen extends Component {
               style={{
                 color: Constants.COLOR.LOGIN_BTN_COLOR,
                 fontSize: Constants.FONT_SIZE.L,
-                fontFamily: 'SofiaPro-Bold',
+               
                 textAlign: 'right',
                 marginTop: 10,
                 marginHorizontal: 20,
@@ -188,7 +188,7 @@ class LoginScreen extends Component {
                 fontSize: Constants.FONT_SIZE.L,
                 color: Constants.COLOR.PRIMARY_COLOR,
                 paddingVertical: 12,
-                fontFamily: 'SofiaPro-Bold',
+       
                 textAlign: 'center',
               }}>
               Login
@@ -206,7 +206,7 @@ class LoginScreen extends Component {
               style={{
                 color: Constants.COLOR.LABLE_COLOR,
                 fontSize: Constants.FONT_SIZE.M,
-                fontFamily: 'SofiaPro-Light',
+           
 
                 marginTop: 20,
               }}>
@@ -222,7 +222,7 @@ class LoginScreen extends Component {
                 style={{
                   color: Constants.COLOR.LOGIN_BTN_COLOR,
                   fontSize: Constants.FONT_SIZE.M,
-                  fontFamily: 'SofiaPro-Bold',
+              
 
                   marginTop: 20,
                 }}>
