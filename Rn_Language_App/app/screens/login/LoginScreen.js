@@ -35,32 +35,15 @@ class LoginScreen extends Component {
   render() {
     return (
       <Container bottomColor={Constants.COLOR.PRIMARY_COLOR}>
-        <View
-          style={{
-            flex: 1,
-            backgroundColor: Constants.COLOR.PRIMARY_COLOR,
-          }}>
+        <View style={styles.container}>
           {/* <KeyboardAwareScrollView showsVerticalScrollIndicator={false}> */}
           <Image
             resizeMode={'contain'}
             source={require('../../assets/image/logo.png')}
-            style={{
-              height: deviceWidth / 4,
-              width: deviceWidth / 3,
-              marginTop: deviceHeight / 12,
-              alignSelf: 'center',
-            }}
+            style={styles.loginLog}
           />
-          <View style={{marginHorizontal: 20, marginTop: 50}}>
-            <Text
-              style={{
-                fontSize: Constants.FONT_SIZE.ANALYTICS,
-                color: Constants.COLOR.LABLE_COLOR,
-                paddingVertical: 12,
-                textAlign: 'center',
-              }}>
-              Login Now
-            </Text>
+          <View style={styles.tilteView}>
+            <Text style={styles.loginLable}>Login Now</Text>
           </View>
           <View style={{marginHorizontal: 20}}>
             <Text
@@ -68,33 +51,14 @@ class LoginScreen extends Component {
                 fontSize: Constants.FONT_SIZE.S,
                 color: Constants.COLOR.LABLE_COLOR,
                 paddingVertical: 12,
-
                 textAlign: 'center',
               }}>
               Please enter the details below to continue
             </Text>
           </View>
-          <View
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              backgroundColor: Constants.COLOR.TEXT_BOX_COLOR,
-              borderRadius: 10,
-              overflow: 'hidden',
-              paddingHorizontal: 20,
-              paddingVertical: Platform.OS === 'ios' ? 12 : 0,
-              marginBottom: 10,
-              marginHorizontal: 20,
-              marginTop: 20,
-            }}>
+          <View style={styles.textboxView}>
             <TextInput
-              style={{
-                flex: 1,
-
-                color: Constants.COLOR.LABLE_COLOR,
-                fontSize: Constants.FONT_SIZE.M,
-                alignItems: 'center',
-              }}
+              style={styles.textInput}
               value={'Vchandrasekar@concertcare.com'}
               keyboardType="default"
               underlineColorAndroid="transparent"
@@ -104,35 +68,12 @@ class LoginScreen extends Component {
             <Image
               resizeMode={'contain'}
               source={require('../../assets/image/email.png')}
-              style={{
-                height: deviceWidth / 25,
-                width: deviceWidth / 25,
-                alignSelf: 'center',
-                tintColor: Constants.COLOR.LABLE_COLOR,
-              }}
+              style={styles.textInputlogo}
             />
           </View>
-          <View
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              backgroundColor: Constants.COLOR.TEXT_BOX_COLOR,
-              borderRadius: 10,
-              overflow: 'hidden',
-              paddingHorizontal: 20,
-              paddingVertical: Platform.OS === 'ios' ? 12 : 0,
-              marginBottom: 10,
-              marginHorizontal: 20,
-              marginTop: 20,
-            }}>
+          <View style={styles.textboxView}>
             <TextInput
-              style={{
-                flex: 1,
-
-                color: Constants.COLOR.LABLE_COLOR,
-                fontSize: Constants.FONT_SIZE.M,
-                alignItems: 'center',
-              }}
+              style={styles.textInput}
               value={'12366666'}
               keyboardType="default"
               underlineColorAndroid="transparent"
@@ -143,61 +84,27 @@ class LoginScreen extends Component {
             <Image
               resizeMode={'contain'}
               source={require('../../assets/image/EyeHidden.png')}
-              style={{
-                height: deviceWidth / 20,
-                width: deviceWidth / 20,
-                alignSelf: 'center',
-                tintColor: Constants.COLOR.LABLE_COLOR,
-              }}
+              style={styles.textInputlogo}
             />
           </View>
           <TouchableOpacity style={{marginVertical: 10}} onPress={() => {}}>
-            <Text
-              style={{
-                color: Constants.COLOR.LOGIN_BTN_COLOR,
-                fontSize: Constants.FONT_SIZE.L,
-
-                textAlign: 'right',
-                marginTop: 10,
-                marginHorizontal: 20,
-              }}>
-              {' '}
-              Forget Password?
-            </Text>
+            <Text style={styles.forgotPasswordLable}> Forget Password?</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
-            style={{
-              borderRadius: 40,
-              backgroundColor: 'red',
-              alignItems: 'center',
-              justifyContent: 'center',
-              marginHorizontal: 20,
-              marginTop: 50,
-              paddingVertical: 5,
-            }}
+            style={styles.loginButton}
             onPress={() => {
-              Actions.selectlanguageScreen();
+              // Actions.selectlanguageScreen();
             }}>
             <Text
-              style={{
-                fontSize: Constants.FONT_SIZE.L,
-                color: Constants.COLOR.PRIMARY_COLOR,
-                paddingVertical: 12,
-
-                textAlign: 'center',
-              }}>
+              style={styles.loginButtonText}>
               Login
             </Text>
           </TouchableOpacity>
 
           <TouchableOpacity
             onPress={() => {}}
-            style={{
-              marginVertical: 10,
-              alignSelf: 'center',
-              flexDirection: 'row',
-            }}>
+            style={styles.registerView}>
             <Text
               style={{
                 color: Constants.COLOR.LABLE_COLOR,
@@ -267,25 +174,73 @@ export default connect(mapStateToProps, mapDispatchToProps)(LoginScreen);
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    height: 50,
     backgroundColor: Constants.COLOR.PRIMARY_COLOR,
   },
   loginLog: {
-    height: deviceWidth / 3,
-    width: deviceWidth / 2,
-    marginTop: deviceHeight / 9,
+    height: deviceWidth / 4,
+    width: deviceWidth / 3,
+    marginTop: deviceHeight / 12,
     alignSelf: 'center',
   },
   tilteView: {
     marginHorizontal: 20,
-    marginTop: 40,
+    marginTop: 50,
   },
   loginLable: {
     fontSize: Constants.FONT_SIZE.ANALYTICS,
     color: Constants.COLOR.LABLE_COLOR,
     paddingVertical: 12,
-
     textAlign: 'center',
-    marginTop: 10,
   },
+  textboxView: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    backgroundColor: Constants.COLOR.TEXT_BOX_COLOR,
+    borderRadius: 10,
+    overflow: 'hidden',
+    paddingHorizontal: 20,
+    paddingVertical: Platform.OS === 'ios' ? 12 : 0,
+    marginBottom: 10,
+    marginHorizontal: 20,
+    marginTop: 20,
+  },
+  textInput: {
+    flex: 1,
+    color: Constants.COLOR.LABLE_COLOR,
+    fontSize: Constants.FONT_SIZE.M,
+    alignItems: 'center',
+  },
+  textInputlogo: {
+    height: deviceWidth / 25,
+    width: deviceWidth / 25,
+    alignSelf: 'center',
+    tintColor: Constants.COLOR.LABLE_COLOR,
+  },
+  forgotPasswordLable: {
+    color: Constants.COLOR.LOGIN_BTN_COLOR,
+    fontSize: Constants.FONT_SIZE.L,
+    textAlign: 'right',
+    marginTop: 10,
+    marginHorizontal: 20,
+  },
+  loginButton: {
+    borderRadius: 40,
+    backgroundColor: 'red',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginHorizontal: 20,
+    marginTop: 50,
+    paddingVertical: 5,
+  },
+  loginButtonText: {
+    fontSize: Constants.FONT_SIZE.L,
+    color: Constants.COLOR.PRIMARY_COLOR,
+    paddingVertical: 12,
+    textAlign: 'center',
+  },
+  registerView:{
+    marginVertical: 10,
+    alignSelf: 'center',
+    flexDirection: 'row',
+  }
 });
