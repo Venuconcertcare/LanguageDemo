@@ -23,7 +23,9 @@
      PRIMARY_COLOR:'#FEFEFE',
      LABLE_COLOR:'#1C1C1C',
      TEXT_BOX_COLOR:'#F1F1F1',
-     LOGIN_BTN_COLOR:'#EC173D'
+     LOGIN_BTN_COLOR:'#EC173D',
+     FONT_PRIMARY: '#12183F',
+     
      
    },
  

@@ -31,7 +31,7 @@ class Main extends Component {
       <View style={{flex: 1}}>
         <Router backAndroidHandler={this.onBackPress}>
           <Scene key="root" hideNavBar>
-            <Scene key={'login'} component={LoginScreen} initial />
+            <Scene key={'login'} component={LoginScreen}  initial/>
             <Scene
               key={'selectlanguageScreen'}
               component={SelectLanguageScreen}
