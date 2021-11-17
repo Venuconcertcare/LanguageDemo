@@ -35,15 +35,32 @@ class LoginScreen extends Component {
   render() {
     return (
       <Container bottomColor={Constants.COLOR.PRIMARY_COLOR}>
-        <View style={styles.container}>
+        <View
+          style={{
+            flex: 1,
+            backgroundColor: Constants.COLOR.PRIMARY_COLOR,
+          }}>
           {/* <KeyboardAwareScrollView showsVerticalScrollIndicator={false}> */}
           <Image
             resizeMode={'contain'}
             source={require('../../assets/image/logo.png')}
-            style={styles.loginLog}
+            style={{
+              height: deviceWidth / 4,
+              width: deviceWidth / 3,
+              marginTop: deviceHeight / 12,
+              alignSelf: 'center',
+            }}
           />
-          <View style={styles.tilteView}>
-            <Text style={styles.loginLable}>Login Now</Text>
+          <View style={{marginHorizontal: 20, marginTop: 50}}>
+            <Text
+              style={{
+                fontSize: Constants.FONT_SIZE.ANALYTICS,
+                color: Constants.COLOR.LABLE_COLOR,
+                paddingVertical: 12,
+                textAlign: 'center',
+              }}>
+              Login Now
+            </Text>
           </View>
           <View style={{marginHorizontal: 20}}>
             <Text
@@ -152,13 +169,12 @@ class LoginScreen extends Component {
           <TouchableOpacity
             style={{
               borderRadius: 40,
-              paddingHorizontal: 2,
               backgroundColor: 'red',
               alignItems: 'center',
               justifyContent: 'center',
-              height: 50,
               marginHorizontal: 20,
-              marginTop: 10,
+              marginTop: 50,
+              paddingVertical: 5,
             }}
             onPress={() => {
               Actions.selectlanguageScreen();
@@ -186,7 +202,6 @@ class LoginScreen extends Component {
               style={{
                 color: Constants.COLOR.LABLE_COLOR,
                 fontSize: Constants.FONT_SIZE.M,
-
                 marginTop: 20,
               }}>
               {' '}
@@ -201,7 +216,6 @@ class LoginScreen extends Component {
                 style={{
                   color: Constants.COLOR.LOGIN_BTN_COLOR,
                   fontSize: Constants.FONT_SIZE.M,
-
                   marginTop: 20,
                 }}>
                 {' '}
