@@ -38,7 +38,6 @@ class LoginScreen extends Component {
         <View
           style={{
             flex: 1,
-            height: 50,
             backgroundColor: Constants.COLOR.PRIMARY_COLOR,
           }}>
           {/* <KeyboardAwareScrollView showsVerticalScrollIndicator={false}> */}
@@ -46,21 +45,19 @@ class LoginScreen extends Component {
             resizeMode={'contain'}
             source={require('../../assets/image/logo.png')}
             style={{
-              height: deviceWidth / 3,
-              width: deviceWidth / 2,
-              marginTop: deviceHeight / 9,
+              height: deviceWidth / 4,
+              width: deviceWidth / 3,
+              marginTop: deviceHeight / 12,
               alignSelf: 'center',
             }}
           />
-          <View style={{marginHorizontal: 20, marginTop: 40}}>
+          <View style={{marginHorizontal: 20, marginTop: 50}}>
             <Text
               style={{
                 fontSize: Constants.FONT_SIZE.ANALYTICS,
                 color: Constants.COLOR.LABLE_COLOR,
                 paddingVertical: 12,
-           
                 textAlign: 'center',
-                marginTop: 10,
               }}>
               Login Now
             </Text>
@@ -71,7 +68,7 @@ class LoginScreen extends Component {
                 fontSize: Constants.FONT_SIZE.S,
                 color: Constants.COLOR.LABLE_COLOR,
                 paddingVertical: 12,
-           
+
                 textAlign: 'center',
               }}>
               Please enter the details below to continue
@@ -93,7 +90,7 @@ class LoginScreen extends Component {
             <TextInput
               style={{
                 flex: 1,
-          
+
                 color: Constants.COLOR.LABLE_COLOR,
                 fontSize: Constants.FONT_SIZE.M,
                 alignItems: 'center',
@@ -131,7 +128,7 @@ class LoginScreen extends Component {
             <TextInput
               style={{
                 flex: 1,
-             
+
                 color: Constants.COLOR.LABLE_COLOR,
                 fontSize: Constants.FONT_SIZE.M,
                 alignItems: 'center',
@@ -159,7 +156,7 @@ class LoginScreen extends Component {
               style={{
                 color: Constants.COLOR.LOGIN_BTN_COLOR,
                 fontSize: Constants.FONT_SIZE.L,
-               
+
                 textAlign: 'right',
                 marginTop: 10,
                 marginHorizontal: 20,
@@ -172,23 +169,22 @@ class LoginScreen extends Component {
           <TouchableOpacity
             style={{
               borderRadius: 40,
-              paddingHorizontal: 2,
               backgroundColor: 'red',
               alignItems: 'center',
               justifyContent: 'center',
-              height: 50,
               marginHorizontal: 20,
-              marginTop: 10,
+              marginTop: 50,
+              paddingVertical: 5,
             }}
             onPress={() => {
-            Actions.selectlanguageScreen()
+              Actions.selectlanguageScreen();
             }}>
             <Text
               style={{
                 fontSize: Constants.FONT_SIZE.L,
                 color: Constants.COLOR.PRIMARY_COLOR,
                 paddingVertical: 12,
-       
+
                 textAlign: 'center',
               }}>
               Login
@@ -206,8 +202,6 @@ class LoginScreen extends Component {
               style={{
                 color: Constants.COLOR.LABLE_COLOR,
                 fontSize: Constants.FONT_SIZE.M,
-           
-
                 marginTop: 20,
               }}>
               {' '}
@@ -222,8 +216,6 @@ class LoginScreen extends Component {
                 style={{
                   color: Constants.COLOR.LOGIN_BTN_COLOR,
                   fontSize: Constants.FONT_SIZE.M,
-              
-
                   marginTop: 20,
                 }}>
                 {' '}
