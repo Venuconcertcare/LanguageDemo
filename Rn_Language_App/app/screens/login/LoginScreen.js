@@ -20,6 +20,7 @@ import Container from '../../components/Container';
 import Constants from '../../utils/Constants';
 import Utility from '../../utils/Utility';
 // import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scrollview';
+import {loginButtonSubmit} from '../../store/actions/login/LoginAction';
 
 const deviceHeight = Utility.isiPhoneX()
   ? Constants.SCREEN_SIZE.PLUS_SIZE
@@ -177,7 +178,10 @@ class LoginScreen extends Component {
               paddingVertical: 5,
             }}
             onPress={() => {
-              Actions.selectlanguageScreen();
+              this.props.loginButtonSubmit(
+                'mselvam@concertcare.com',
+                'Password@123',
+              );
             }}>
             <Text
               style={{
@@ -254,9 +258,7 @@ const mapStateToProps = (state, props) => {
 const mapDispatchToProps = dispatch => {
   return bindActionCreators(
     {
-      // loginManualUserDetails,
-      // updateSelectedUser,
-      // resetDeepLinkData,
+      loginButtonSubmit,
     },
     dispatch,
   );

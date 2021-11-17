@@ -1,4 +1,3 @@
-
 import {Alert, Dimensions, Platform, PixelRatio} from 'react-native';
 
 import {Actions} from 'react-native-router-flux';
@@ -10,7 +9,7 @@ export default class Utility {
    * Finds the device
    * @returns boolean value
    */
-   static isiPhoneX() {
+  static isiPhoneX() {
     if (height === 812) {
       // iPhone X / iPhone XS
       return true;
@@ -20,5 +19,8 @@ export default class Utility {
     } else {
       return false;
     }
+  }
+  static showAlert(title, message) {
+    Alert.alert(title, message), [{text: 'OK'}];
   }
 }
