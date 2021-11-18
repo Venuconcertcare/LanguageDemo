@@ -1,0 +1,9 @@
+{
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "dob": "DOB",
+    "location": "Location",
+    "email": "Email",
+    "sex": "Sex",
+    "myProfile": "My Profile"
+  }

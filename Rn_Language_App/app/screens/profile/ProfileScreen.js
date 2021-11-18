@@ -15,7 +15,10 @@ import Container from '../../components/Container';
 import Constants from '../../utils/Constants';
 import Utility from '../../utils/Utility';
 import {Avatar} from 'react-native-elements';
-import LinearGradient from 'react-native-linear-gradient';
+// import { translate } from 'i18n-js';
+// import strings from '../../utils/Localize';
+import I18n from '../../i18n/i18n';
+import FastImage from 'react-native-fast-image';
 
 const deviceHeight = Utility.isiPhoneX()
   ? Constants.SCREEN_SIZE.PLUS_SIZE
@@ -33,7 +36,7 @@ export default class ProfileScreen extends Component {
             fontSize: Constants.FONT_SIZE.TITLE,
             textAlign: 'center',
           }}>
-          My Profile
+          {I18n.t('myProfile')}
         </Text>
       </View>
     );
@@ -45,8 +48,8 @@ export default class ProfileScreen extends Component {
           style={{
             justifyContent: 'flex-start',
             alignItems: 'flex-start',
-            borderBottomLeftRadius: 37.43,
-            borderBottomRightRadius: 37.43,
+            borderBottomLeftRadius: 38,
+            borderBottomRightRadius: 38,
             backgroundColor: Constants.COLOR.THEME_COLOR,
             paddingBottom: 10,
             paddingHorizontal: 35,
@@ -71,23 +74,15 @@ export default class ProfileScreen extends Component {
             <TouchableOpacity
               style={{
                 alignSelf: 'center',
-                marginLeft: -15,
-                marginTop: -10,
               }}
               onPress={() => {}}>
-              <Avatar
-                size={'large'}
-                rounded
-                containerStyle={{
-                  alignSelf: 'center',
+              <FastImage
+                style={{
+                  height: 100,
+                  width: 100,
+                  borderRadius: 50,
                 }}
-                renderPlaceholderContent={
-                  <Avatar
-                    size={'large'}
-                    source={require('../../assets/image/profileImg.png')}
-                  />
-                }
-                source={require('../../assets/image/profileImg.png')}
+                source={require('../../assets/image/profile.jpeg')}
               />
               <View
                 style={{
@@ -110,8 +105,8 @@ export default class ProfileScreen extends Component {
                   resizeMode={'contain'}
                   source={require('../../assets/image/camera.png')}
                   style={{
-                    height: 12,
-                    width: 12,
+                    height: 15,
+                    width: 15,
                     alignSelf: 'center',
                     tintColor: '#171717',
                   }}
@@ -128,6 +123,7 @@ export default class ProfileScreen extends Component {
               fontSize: Constants.FONT_SIZE.L,
               color: Constants.COLOR.LABLE_COLOR,
               fontWeight: 'bold',
+              alignSelf: 'center',
             }}>
             Mira Suxi
           </Text>
@@ -152,8 +148,9 @@ export default class ProfileScreen extends Component {
                 color: Constants.COLOR.FONT_PRIMARY,
                 fontSize: Constants.FONT_SIZE.M,
                 marginHorizontal: 10,
+                fontWeight: 'bold',
               }}>
-              First Name
+              {I18n.t('firstName')}
             </Text>
             <View style={styles.subViewListContainer}>
               <Text
@@ -175,8 +172,9 @@ export default class ProfileScreen extends Component {
                 color: Constants.COLOR.FONT_PRIMARY,
                 fontSize: Constants.FONT_SIZE.M,
                 marginHorizontal: 10,
+                fontWeight: 'bold',
               }}>
-              Last Name
+              {I18n.t('lastName')}
             </Text>
             <View style={styles.subViewListContainer}>
               <Text
@@ -203,8 +201,9 @@ export default class ProfileScreen extends Component {
                 color: Constants.COLOR.FONT_PRIMARY,
                 fontSize: Constants.FONT_SIZE.M,
                 marginHorizontal: 10,
+                fontWeight: 'bold',
               }}>
-              DOB
+              {I18n.t('dob')}
             </Text>
             <View style={styles.subViewListContainer}>
               <Text
@@ -226,8 +225,9 @@ export default class ProfileScreen extends Component {
                 color: Constants.COLOR.FONT_PRIMARY,
                 fontSize: Constants.FONT_SIZE.M,
                 marginHorizontal: 10,
+                fontWeight: 'bold',
               }}>
-              Sex
+              {I18n.t('sex')}
             </Text>
             <View style={styles.subViewListContainer}>
               <Text
@@ -254,8 +254,9 @@ export default class ProfileScreen extends Component {
                 color: Constants.COLOR.FONT_PRIMARY,
                 fontSize: Constants.FONT_SIZE.M,
                 marginHorizontal: 10,
+                fontWeight: 'bold',
               }}>
-              Location
+              {I18n.t('location')}
             </Text>
             <View style={styles.subViewListContainer}>
               <Text
@@ -282,8 +283,9 @@ export default class ProfileScreen extends Component {
                 color: Constants.COLOR.FONT_PRIMARY,
                 fontSize: Constants.FONT_SIZE.M,
                 marginHorizontal: 10,
+                fontWeight: 'bold',
               }}>
-              Email
+              {I18n.t('email')}
             </Text>
             <View style={styles.subViewListContainer}>
               <Text

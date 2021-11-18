@@ -1,0 +1,9 @@
+{
+    "firstName": "Voornaam",
+    "lastName": "achternaam",
+    "dob": "DOB",
+    "location": "plaats",
+    "email": "Email",
+    "sex": "Seks",
+    "myProfile": "mijn profiel"
+  }
