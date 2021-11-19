@@ -3,7 +3,8 @@
     "lastName": "achternaam",
     "dob": "DOB",
     "location": "plaats",
-    "email": "Email",
+    "email": "E-mail",
     "sex": "Seks",
-    "myProfile": "mijn profiel"
+    "myProfile": "mijn profiel",
+     "phone":"telefon"
   }

@@ -11,6 +11,8 @@ import {
   TouchableOpacity,
   ImageBackground,
 } from 'react-native';
+import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
 import Container from '../../components/Container';
 import Constants from '../../utils/Constants';
 import Utility from '../../utils/Utility';
@@ -19,13 +21,20 @@ import {Avatar} from 'react-native-elements';
 // import strings from '../../utils/Localize';
 import I18n from '../../i18n/i18n';
 import FastImage from 'react-native-fast-image';
+import {bindActionCreators} from 'redux';
+import {loginDetails} from '../../store/reducers/LoginReducer';
+import {ScrollView} from 'react-native';
 
 const deviceHeight = Utility.isiPhoneX()
   ? Constants.SCREEN_SIZE.PLUS_SIZE
   : Dimensions.get('window').height;
 const deviceWidth = Dimensions.get('window').width;
 
-export default class ProfileScreen extends Component {
+class ProfileScreen extends Component {
+  static propTypes = {
+    loginDetails: PropTypes.object,
+  };
+
   _renderScreenTitle = () => {
     return (
       <View style={{flexDirection: 'row', marginTop: 10}}>
@@ -42,6 +51,7 @@ export default class ProfileScreen extends Component {
     );
   };
   render() {
+    console.log(this.props.loginDetails.user, '======test');
     return (
       <Container bottomColor={Constants.COLOR.PRIMARY_COLOR}>
         <View
@@ -125,7 +135,9 @@ export default class ProfileScreen extends Component {
               fontWeight: 'bold',
               alignSelf: 'center',
             }}>
-            Mira Suxi
+            {this.props.loginDetails.user.firstname +
+              ' ' +
+              this.props.loginDetails.user.lastname}
           </Text>
           <Text
             style={{
@@ -135,225 +147,216 @@ export default class ProfileScreen extends Component {
               color: Constants.COLOR.LABLE_COLOR,
               paddingVertical: 10,
             }}>
-            Writer
+            {this.props.loginDetails.user.region}
           </Text>
         </View>
-
-        <View
-          style={{flexDirection: 'row', marginTop: 25, marginHorizontal: 15}}>
+        <ScrollView>
           <View
-            style={{flexDirection: 'column', flex: 1, marginHorizontal: 10}}>
-            <Text
-              style={{
-                color: Constants.COLOR.FONT_PRIMARY,
-                fontSize: Constants.FONT_SIZE.M,
-                marginHorizontal: 10,
-                fontWeight: 'bold',
-              }}>
-              {I18n.t('firstName')}
-            </Text>
-            <View style={styles.subViewListContainer}>
-              <Text
-                style={{
-                  color: Constants.COLOR.FONT_PRIMARY,
-                  fontSize: Constants.FONT_SIZE.M,
-                  marginHorizontal: 10,
-                  textAlign: 'left',
-
-                  marginTop: 15,
-                }}>
-                Venu
-              </Text>
-            </View>
-          </View>
-          <View style={{flexDirection: 'column', flex: 1}}>
-            <Text
-              style={{
-                color: Constants.COLOR.FONT_PRIMARY,
-                fontSize: Constants.FONT_SIZE.M,
-                marginHorizontal: 10,
-                fontWeight: 'bold',
-              }}>
-              {I18n.t('lastName')}
-            </Text>
-            <View style={styles.subViewListContainer}>
-              <Text
-                style={{
-                  color: Constants.COLOR.FONT_PRIMARY,
-                  fontSize: Constants.FONT_SIZE.M,
-                  marginHorizontal: 10,
-                  textAlign: 'left',
-
-                  marginTop: 15,
-                }}>
-                Gopal
-              </Text>
-            </View>
-          </View>
-        </View>
-
-        <View
-          style={{flexDirection: 'row', marginTop: 10, marginHorizontal: 15}}>
-          <View
-            style={{flexDirection: 'column', flex: 1, marginHorizontal: 10}}>
-            <Text
-              style={{
-                color: Constants.COLOR.FONT_PRIMARY,
-                fontSize: Constants.FONT_SIZE.M,
-                marginHorizontal: 10,
-                fontWeight: 'bold',
-              }}>
-              {I18n.t('dob')}
-            </Text>
-            <View style={styles.subViewListContainer}>
-              <Text
-                style={{
-                  color: Constants.COLOR.FONT_PRIMARY,
-                  fontSize: Constants.FONT_SIZE.M,
-                  marginHorizontal: 10,
-                  textAlign: 'left',
-
-                  marginTop: 15,
-                }}>
-                22/07/1992
-              </Text>
-            </View>
-          </View>
-          <View style={{flexDirection: 'column', flex: 1}}>
-            <Text
-              style={{
-                color: Constants.COLOR.FONT_PRIMARY,
-                fontSize: Constants.FONT_SIZE.M,
-                marginHorizontal: 10,
-                fontWeight: 'bold',
-              }}>
-              {I18n.t('sex')}
-            </Text>
-            <View style={styles.subViewListContainer}>
-              <Text
-                style={{
-                  color: Constants.COLOR.FONT_PRIMARY,
-                  fontSize: Constants.FONT_SIZE.M,
-                  marginHorizontal: 10,
-                  textAlign: 'left',
-
-                  marginTop: 15,
-                }}>
-                Male
-              </Text>
-            </View>
-          </View>
-        </View>
-
-        <View
-          style={{flexDirection: 'row', marginTop: 10, marginHorizontal: 15}}>
-          <View
-            style={{flexDirection: 'column', flex: 1, marginHorizontal: 10}}>
-            <Text
-              style={{
-                color: Constants.COLOR.FONT_PRIMARY,
-                fontSize: Constants.FONT_SIZE.M,
-                marginHorizontal: 10,
-                fontWeight: 'bold',
-              }}>
-              {I18n.t('location')}
-            </Text>
-            <View style={styles.subViewListContainer}>
-              <Text
-                style={{
-                  color: Constants.COLOR.FONT_PRIMARY,
-                  fontSize: Constants.FONT_SIZE.M,
-                  marginHorizontal: 10,
-                  textAlign: 'left',
-
-                  marginTop: 15,
-                }}>
-                chennai
-              </Text>
-            </View>
-          </View>
-        </View>
-
-        <View
-          style={{flexDirection: 'row', marginTop: 10, marginHorizontal: 15}}>
-          <View
-            style={{flexDirection: 'column', flex: 1, marginHorizontal: 10}}>
-            <Text
-              style={{
-                color: Constants.COLOR.FONT_PRIMARY,
-                fontSize: Constants.FONT_SIZE.M,
-                marginHorizontal: 10,
-                fontWeight: 'bold',
-              }}>
-              {I18n.t('email')}
-            </Text>
-            <View style={styles.subViewListContainer}>
-              <Text
-                style={{
-                  color: Constants.COLOR.FONT_PRIMARY,
-                  fontSize: Constants.FONT_SIZE.M,
-                  marginHorizontal: 10,
-                  textAlign: 'left',
-
-                  marginTop: 15,
-                }}>
-                vchandrasekar@concertcare.com
-              </Text>
-            </View>
-          </View>
-        </View>
-
-        {/*        
-          <View
-            style={{
-              backgroundColor: 'white',
-              borderRadius: 25,
-              marginVertical: 5,
-              paddingVertical: 30,
-              marginHorizontal: 20,
-              marginTop: 30,
-            }}>
+            style={{flexDirection: 'row', marginTop: 25, marginHorizontal: 15}}>
             <View
-              style={{
-                flexDirection: 'row',
-                //paddingVertical: 15,
-                paddingHorizontal: 10,
-                alignItems: 'center',
-              }}>
-              <View
+              style={{flexDirection: 'column', flex: 1, marginHorizontal: 10}}>
+              <Text
                 style={{
-                  flex: 3,
-                  flexDirection: 'column',
+                  color: Constants.COLOR.FONT_PRIMARY,
+                  fontSize: Constants.FONT_SIZE.M,
                   marginHorizontal: 10,
+                  fontWeight: 'bold',
                 }}>
+                {I18n.t('firstName')}
+              </Text>
+              <View style={styles.subViewListContainer}>
                 <Text
                   style={{
-                    fontFamily: 'SofiaPro-Bold',
+                    color: Constants.COLOR.FONT_PRIMARY,
                     fontSize: Constants.FONT_SIZE.M,
-                    color: '#333132',
-                    //lineHeight: 18,
+                    marginHorizontal: 10,
+                    textAlign: 'left',
+
+                    marginTop: 15,
                   }}>
-                 Privacy
+                  {this.props.loginDetails.user.firstname}
                 </Text>
               </View>
             </View>
-          </View> */}
+            <View style={{flexDirection: 'column', flex: 1}}>
+              <Text
+                style={{
+                  color: Constants.COLOR.FONT_PRIMARY,
+                  fontSize: Constants.FONT_SIZE.M,
+                  marginHorizontal: 10,
+                  fontWeight: 'bold',
+                }}>
+                {I18n.t('lastName')}
+              </Text>
+              <View style={styles.subViewListContainer}>
+                <Text
+                  style={{
+                    color: Constants.COLOR.FONT_PRIMARY,
+                    fontSize: Constants.FONT_SIZE.M,
+                    marginHorizontal: 10,
+                    textAlign: 'left',
 
-        {/* <View
-          
-          style={{
-            backgroundColor: 'red',
-            borderTopLeftRadius: 37.43,
-            borderTopRightRadius: 37.43,
-            flex: 1,
-            minHeight: deviceHeight / 1.3,
-          }}>
-        
-        </View> */}
+                    marginTop: 15,
+                  }}>
+                  {this.props.loginDetails.user.lastname}
+                </Text>
+              </View>
+            </View>
+          </View>
+
+          <View
+            style={{flexDirection: 'row', marginTop: 10, marginHorizontal: 15}}>
+            <View
+              style={{flexDirection: 'column', flex: 1, marginHorizontal: 10}}>
+              <Text
+                style={{
+                  color: Constants.COLOR.FONT_PRIMARY,
+                  fontSize: Constants.FONT_SIZE.M,
+                  marginHorizontal: 10,
+                  fontWeight: 'bold',
+                }}>
+                {I18n.t('dob')}
+              </Text>
+              <View style={styles.subViewListContainer}>
+                <Text
+                  style={{
+                    color: Constants.COLOR.FONT_PRIMARY,
+                    fontSize: Constants.FONT_SIZE.M,
+                    marginHorizontal: 10,
+                    textAlign: 'left',
+
+                    marginTop: 15,
+                  }}>
+                  22/07/1992
+                </Text>
+              </View>
+            </View>
+            <View style={{flexDirection: 'column', flex: 1}}>
+              <Text
+                style={{
+                  color: Constants.COLOR.FONT_PRIMARY,
+                  fontSize: Constants.FONT_SIZE.M,
+                  marginHorizontal: 10,
+                  fontWeight: 'bold',
+                }}>
+                {I18n.t('sex')}
+              </Text>
+              <View style={styles.subViewListContainer}>
+                <Text
+                  style={{
+                    color: Constants.COLOR.FONT_PRIMARY,
+                    fontSize: Constants.FONT_SIZE.M,
+                    marginHorizontal: 10,
+                    textAlign: 'left',
+
+                    marginTop: 15,
+                  }}>
+                  Male
+                </Text>
+              </View>
+            </View>
+          </View>
+
+          <View
+            style={{flexDirection: 'row', marginTop: 10, marginHorizontal: 15}}>
+            <View
+              style={{flexDirection: 'column', flex: 1, marginHorizontal: 10}}>
+              <Text
+                style={{
+                  color: Constants.COLOR.FONT_PRIMARY,
+                  fontSize: Constants.FONT_SIZE.M,
+                  marginHorizontal: 10,
+                  fontWeight: 'bold',
+                }}>
+                {I18n.t('location')}
+              </Text>
+              <View style={styles.subViewListContainer}>
+                <Text
+                  style={{
+                    color: Constants.COLOR.FONT_PRIMARY,
+                    fontSize: Constants.FONT_SIZE.M,
+                    marginHorizontal: 10,
+                    textAlign: 'left',
+
+                    marginTop: 15,
+                  }}>
+                  {this.props.loginDetails.user.address}
+                </Text>
+              </View>
+            </View>
+          </View>
+
+          <View
+            style={{flexDirection: 'row', marginTop: 10, marginHorizontal: 15}}>
+            <View
+              style={{flexDirection: 'column', flex: 1, marginHorizontal: 10}}>
+              <Text
+                style={{
+                  color: Constants.COLOR.FONT_PRIMARY,
+                  fontSize: Constants.FONT_SIZE.M,
+                  marginHorizontal: 10,
+                  fontWeight: 'bold',
+                }}>
+                {I18n.t('email')}
+              </Text>
+              <View style={styles.subViewListContainer}>
+                <Text
+                  style={{
+                    color: Constants.COLOR.FONT_PRIMARY,
+                    fontSize: Constants.FONT_SIZE.M,
+                    marginHorizontal: 10,
+                    textAlign: 'left',
+
+                    marginTop: 15,
+                  }}>
+                  {this.props.loginDetails.user.email}
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            style={{flexDirection: 'row', marginTop: 10, marginHorizontal: 15}}>
+            <View
+              style={{flexDirection: 'column', flex: 1, marginHorizontal: 10}}>
+              <Text
+                style={{
+                  color: Constants.COLOR.FONT_PRIMARY,
+                  fontSize: Constants.FONT_SIZE.M,
+                  marginHorizontal: 10,
+                  fontWeight: 'bold',
+                }}>
+                {I18n.t('phone')}
+              </Text>
+              <View style={styles.subViewListContainer}>
+                <Text
+                  style={{
+                    color: Constants.COLOR.FONT_PRIMARY,
+                    fontSize: Constants.FONT_SIZE.M,
+                    marginHorizontal: 10,
+                    textAlign: 'left',
+
+                    marginTop: 15,
+                  }}>
+                  {this.props.loginDetails.user.phone}
+                </Text>
+              </View>
+            </View>
+          </View>
+        </ScrollView>
       </Container>
     );
   }
 }
+const mapStateToProps = (state, props) => {
+  const {
+    loginState: {loginDetails},
+  } = state;
+  return {loginDetails};
+};
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators({}, dispatch);
+};
+export default connect(mapStateToProps, mapDispatchToProps)(ProfileScreen);
 // define your styles
 const styles = StyleSheet.create({
   subViewListContainer: {

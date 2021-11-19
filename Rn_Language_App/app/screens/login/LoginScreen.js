@@ -33,6 +33,13 @@ class LoginScreen extends Component {
     //   loginManualUserDetails: PropTypes.func,
     //   updateSelectedUser: PropTypes.func,
   };
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: '',
+      password: '',
+    };
+  }
   render() {
     return (
       <Container bottomColor={Constants.COLOR.PRIMARY_COLOR}>
@@ -60,11 +67,13 @@ class LoginScreen extends Component {
           <View style={styles.textboxView}>
             <TextInput
               style={styles.textInput}
-              value={'Vchandrasekar@concertcare.com'}
+              value={this.state.email}
               keyboardType="default"
               underlineColorAndroid="transparent"
               autoCapitalize={'none'}
               returnKeyType={'next'}
+              placeholder="Email"
+              onChangeText={email => this.setState({email})}
             />
             <Image
               resizeMode={'contain'}
@@ -75,12 +84,14 @@ class LoginScreen extends Component {
           <View style={styles.textboxView}>
             <TextInput
               style={styles.textInput}
-              value={'12366666'}
+              value={this.state.password}
               keyboardType="default"
               underlineColorAndroid="transparent"
               autoCapitalize={'none'}
               returnKeyType={'next'}
+              placeholder="Password"
               secure={true}
+              onChangeText={password => this.setState({password})}
             />
             <Image
               resizeMode={'contain'}
@@ -96,8 +107,13 @@ class LoginScreen extends Component {
             style={styles.loginButton}
             onPress={() => {
               this.props.loginButtonSubmit(
-                'mselvam@concertcare.com',
-                'Password@123',
+                this.state.email,
+                this.state.password,
+
+                // this.props.email,
+                // this.props.password
+                // 'mselvam@concertcare.com',
+                // 'Password@123',
               );
             }}>
             <Text style={styles.loginButtonText}>Login</Text>
